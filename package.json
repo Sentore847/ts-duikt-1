@@ -1,0 +1,15 @@
+{
+  "name": "duikt",
+  "version": "1.0.0",
+  "description": "Цей репозиторій містить приклад базового налаштування TypeScript-проєкту з використанням Node.js.  \r Проєкт демонструє компіляцію TypeScript-коду у JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
