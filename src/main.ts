@@ -1,13 +1,14 @@
 const modal: HTMLElement | null = document.querySelector('.modal');
 const openBtn: HTMLElement | null = document.querySelector('#openModal');
 const closeBtn: HTMLElement | null = document.querySelector('#closeModal');
+const loadBtn: HTMLElement | null = document.querySelector('#loadPosts');
 
 openBtn?.addEventListener('click', () => {
-    modal!.style.display = 'block';
+    if(modal) modal.style.display = 'flex';
 });
 
 closeBtn?.addEventListener('click', () => {
-    modal!.style.display = 'none';
+    if(modal) modal.style.display = 'none';
 });
 
 window.addEventListener('scroll', () => {
@@ -24,4 +25,6 @@ async function loadPosts(): Promise<void> {
         .join('');
 }
 
-loadPosts();
+loadBtn?.addEventListener('click', () => {
+    loadPosts();
+});

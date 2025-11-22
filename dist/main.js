@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const modal = document.querySelector('.modal');
 const openBtn = document.querySelector('#openModal');
 const closeBtn = document.querySelector('#closeModal');
+const loadBtn = document.querySelector('#loadPosts');
 openBtn === null || openBtn === void 0 ? void 0 : openBtn.addEventListener('click', () => {
     modal.style.display = 'block';
 });
@@ -30,4 +31,6 @@ function loadPosts() {
             .join('');
     });
 }
-loadPosts();
+loadBtn === null || loadBtn === void 0 ? void 0 : loadBtn.addEventListener('click', () => {
+    loadPosts();
+});
