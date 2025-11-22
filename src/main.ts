@@ -1,30 +1,19 @@
-const modal: HTMLElement | null = document.querySelector('.modal');
-const openBtn: HTMLElement | null = document.querySelector('#openModal');
-const closeBtn: HTMLElement | null = document.querySelector('#closeModal');
-const loadBtn: HTMLElement | null = document.querySelector('#loadPosts');
+import { initModal } from './modules/modal/modal';
+import { initPosts } from './modules/posts/postsController';
+import { initScrollHandler } from './modules/scroll/scrollHandler';
 
-openBtn?.addEventListener('click', () => {
-    if(modal) modal.style.display = 'flex';
-});
-
-closeBtn?.addEventListener('click', () => {
-    if(modal) modal.style.display = 'none';
-});
-
-window.addEventListener('scroll', () => {
-    console.log('Scrolling...');
-});
-
-async function loadPosts(): Promise<void> {
-    const container = document.querySelector('#posts');
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
-    const data: { title: string; body: string }[] = await res.json();
-
-    container!.innerHTML = data
-        .map(post => `<div class="post"><h3>${post.title}</h3><p>${post.body}</p></div>`)
-        .join('');
+function initApp(): void {
+    initModal();
+    
+    initPosts();
+    
+    initScrollHandler();
+    
+    console.log('Application initialized successfully');
 }
 
-loadBtn?.addEventListener('click', () => {
-    loadPosts();
-});
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
