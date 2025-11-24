@@ -10,6 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.9.2"
-  }
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sentore847/ts-duikt-1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sentore847/ts-duikt-1/issues"
+  },
+  "homepage": "https://github.com/Sentore847/ts-duikt-1#readme"
 }
